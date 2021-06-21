@@ -7,8 +7,11 @@ import Home from './Home';
 import Order from './Order';
 import Profile from './Profile';
 import FoodDetail from './FoodDetail';
+import OrderSummary from './OrderSummary';
+import OrderSuccess from './OrderSuccess';
 
-export {SplashScreen, 
+export {
+    SplashScreen, 
     SignIn, 
     SignUp, 
     SignUpAddress, 
@@ -16,5 +19,7 @@ export {SplashScreen,
     Home,
     Order,
     Profile,
-    FoodDetail
+    FoodDetail,
+    OrderSummary,
+    OrderSuccess
 };

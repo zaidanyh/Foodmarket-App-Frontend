@@ -23,43 +23,47 @@ const renderTabBar = (props) => (
     />
 );
 
-const NewTaste = () => {
+const InProgress = () => {
     const navigation = useNavigation();
     return (
         <View style={{ paddingTop: 8, paddingHorizontal: 24 }}>
             <ItemListFood 
                 image={FoodDummy3} 
                 onPress={() => navigation.navigate('FoodDetail')} 
-                rating={3}
-                type="product"
+                items={3}
+                price="2.000.000"
+                type="in-progress"
                 name="Sop Bumil"
-                price="289.000"/>
+            />
             <ItemListFood 
                 image={FoodDummy1} 
                 onPress={() => navigation.navigate('FoodDetail')} 
-                rating={3}
-                type="product"
+                items={3}
+                price="2.000.000"
+                type="in-progress"
                 name="Sop Bumil"
-                price="289.000"/>
+            />
             <ItemListFood 
                 image={FoodDummy4} 
-                onPress={() => navigation.navigate('FoodDetail')} 
-                rating={3}
-                type="product"
+                onPress={() => navigation.navigate('FoodDetail')}
+                items={3}
+                price="2.000.000"
+                type="in-progress"
                 name="Sop Bumil"
-                price="289.000"/>
+            />
             <ItemListFood 
                 image={FoodDummy2} 
-                onPress={() => navigation.navigate('FoodDetail')} 
-                rating={3}
-                type="product"
+                onPress={() => navigation.navigate('FoodDetail')}
+                items={3}
+                price="2.000.000"
+                type="in-progress"
                 name="Sop Bumil"
-                price="289.000"/>
+            />
         </View>
     );
 };
    
-const Popular = () => {
+const PastOrders = () => {
     const navigation = useNavigation();
     return (
         <View style={{ paddingTop: 8, paddingHorizontal: 24 }}>
@@ -67,84 +71,57 @@ const Popular = () => {
                 image={FoodDummy4} 
                 onPress={() => navigation.navigate('FoodDetail')} 
                 rating={3}
-                type="product"
+                items={3}
+                price="2.000.000"
+                type="past-orders"
                 name="Sop Bumil"
-                price="289.000"/>
-            <ItemListFood 
-                image={FoodDummy3} 
+                date="Jun 12, 14:00"
+            />
+            <ItemListFood image={FoodDummy3} 
                 onPress={() => navigation.navigate('FoodDetail')} 
                 rating={3}
-                type="product"
+                items={3}
+                price="2.000.000"
+                type="past-orders"
                 name="Sop Bumil"
-                price="289.000"/>
-            <ItemListFood 
-                image={FoodDummy2} 
+                date="Jun 12, 14:00"
+                status="Cancel"
+            />
+            <ItemListFood image={FoodDummy2} 
                 onPress={() => navigation.navigate('FoodDetail')} 
                 rating={3}
-                type="product"
+                items={3}
+                price="2.000.000"
+                type="past-orders"
                 name="Sop Bumil"
-                price="289.000"/>
-            <ItemListFood 
-                image={FoodDummy1} 
+                date="Jun 12, 14:00"
+            />
+            <ItemListFood image={FoodDummy1} 
                 onPress={() => navigation.navigate('FoodDetail')} 
                 rating={3}
-                type="product"
+                items={3}
+                price="2.000.000"
+                type="past-orders"
                 name="Sop Bumil"
-                price="289.000"/>
+                date="Jun 12, 14:00"
+                status="Cancel"
+            />
         </View>
     );
 };
-
-const Recommended = () => {
-    const navigation = useNavigation();
-    return (
-        <View style={{ paddingTop: 8, paddingHorizontal: 24 }}>
-            <ItemListFood 
-                image={FoodDummy1} 
-                onPress={() => navigation.navigate('FoodDetail')} 
-                rating={3}
-                type="product"
-                name="Sop Bumil"
-                price="289.000"/>
-            <ItemListFood 
-                image={FoodDummy2} 
-                onPress={() => navigation.navigate('FoodDetail')} 
-                rating={3}
-                type="product"
-                name="Sop Bumil"
-                price="289.000"/>
-            <ItemListFood 
-                image={FoodDummy3} 
-                onPress={() => navigation.navigate('FoodDetail')} 
-                rating={3}
-                type="product"
-                name="Sop Bumil"
-                price="289.000"/>
-            <ItemListFood 
-                image={FoodDummy4} 
-                onPress={() => navigation.navigate('FoodDetail')} 
-                rating={3}
-                type="product"
-                name="Sop Bumil"
-                price="289.000"/>
-        </View>
-    );
-}
    
 const initialLayout = { width: Dimensions.get('window').width };
 
-const HomeTabSection = () => {
+const OrderTabSection = () => {
     const [index, setIndex] = React.useState(0);
     const [routes] = React.useState([
-        { key: '1', title: 'New Taste' },
-        { key: '2', title: 'Popular' },
-        { key: '3', title: 'Recommended' }
+        { key: 'first', title: 'In Progress' },
+        { key: 'second', title: 'Past Orders' }
     ]);
  
     const renderScene = SceneMap({
-        1: NewTaste,
-        2: Popular,
-        3: Recommended,
+        first: InProgress,
+        second: PastOrders
     });
     return (
         <TabView
@@ -158,6 +135,6 @@ const HomeTabSection = () => {
     )
 }
 
-export default HomeTabSection;
+export default OrderTabSection
 
 const styles = StyleSheet.create({});

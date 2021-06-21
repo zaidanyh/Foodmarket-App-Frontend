@@ -3,7 +3,7 @@ import { ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react
 import { FoodDummy6, IconBackWhite } from '../../assets';
 import { Button, Counter, Rating } from '../../components';
 
-const FoodDetail = () => {
+const FoodDetail = ({navigation}) => {
     return (
         <View style={styles.page}>
             <ImageBackground source={FoodDummy6} style={styles.cover}>
@@ -33,7 +33,7 @@ const FoodDetail = () => {
                         <Text style={styles.amount}>IDR 12.289.000</Text>
                     </View>
                     <View style={styles.button}>
-                        <Button buttonText="Order Now" />
+                        <Button buttonText="Order Now" onPress={() => navigation.navigate('OrderSummary')} />
                     </View>
                 </View>
             </View>

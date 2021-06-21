@@ -1,10 +1,25 @@
 import Header from './Header';
 import BottomNav from './BottomNav';
 import FoodCard from './FoodCard';
-import HomeTab from './HomeTabSection';
+import HomeTabSection from './HomeTabSection';
 import HomeProfile from './HomeProfile';
 import Rating from './Rating';
-import ListFood from './ItemListFood';
+import ItemListFood from './ItemListFood';
 import Counter from './Counter';
+import ItemValue from './ItemValue';
+import EmptyOrder from './EmptyOrder';
+import OrderTabSection from './OrderTabSection';
 
-export { Header, BottomNav, FoodCard, HomeTab, HomeProfile, Rating, ListFood, Counter };
+export { 
+    Header, 
+    BottomNav, 
+    FoodCard, 
+    HomeTabSection, 
+    HomeProfile, 
+    Rating, 
+    ItemListFood, 
+    Counter,
+    ItemValue,
+    EmptyOrder,
+    OrderTabSection
+};

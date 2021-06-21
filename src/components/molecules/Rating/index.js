@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { IcStarOff, IcStarOn } from '../../../assets';
 
-const Rating = () => {
+const Rating = ({rating}) => {
     return (
         <View style={{ flexDirection: 'row' }}>
             <View style={{ flexDirection: 'row' }}>
@@ -12,7 +12,7 @@ const Rating = () => {
                 <IcStarOn />
                 <IcStarOff />
             </View>
-            <Text>4.5</Text>
+            <Text>{rating}</Text>
         </View>
     )
 }
