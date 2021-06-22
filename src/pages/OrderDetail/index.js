@@ -3,7 +3,7 @@ import { ScrollView, StyleSheet, Text, View } from 'react-native'
 import { FoodDummy1 } from '../../assets';
 import { Button, Header, ItemListFood, ItemValue, Gap } from '../../components';
 
-const OrderSummary = ({navigation}) => {
+const OrderDetail = () => {
     return (
         <ScrollView>
             <View>
@@ -35,9 +35,18 @@ const OrderSummary = ({navigation}) => {
                     <ItemValue label="Home No." value="A5 Hook" />
                     <ItemValue label="City" value="Bandung" />
                 </View>
+
+                <View style={styles.content}>
+                    <Text style={styles.label}>Order Status:</Text>
+                    <ItemValue label="#FM209391" value="Paid" color="#1ABC9C"/>
+                </View>
+
                 <View style={styles.button}>
-                    <Button buttonText="Checkout Now" 
+                    <Button 
+                        buttonText="Cancel My Order" 
                         onPress={() => navigation.replace('OrderSuccess')} 
+                        color="#D9435E"
+                        textColor="white"
                     />
                 </View>
             </View>
@@ -46,7 +55,7 @@ const OrderSummary = ({navigation}) => {
     )
 }
 
-export default OrderSummary;
+export default OrderDetail
 
 const styles = StyleSheet.create({
     content: {
@@ -65,4 +74,4 @@ const styles = StyleSheet.create({
         paddingTop: 24,
         paddingHorizontal: 24
     }
-});
+})
